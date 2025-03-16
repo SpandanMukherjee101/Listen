@@ -1,0 +1,71 @@
+.navbar{
+    background-color: #013642;
+}
+
+.l{
+    color: #00b8c5 !important;
+}
+
+.sqz{
+    animation: sq 3s infinite both ease-in-out;
+}
+
+.sqzRev{
+    animation: sqR 3s infinite both ease-in-out;
+}
+
+@keyframes sq {
+    0%{
+        font-weight: 200;
+    }
+
+    50%{
+        font-weight: 900;
+    }
+
+    100%{
+        font-weight: 200;
+    }
+}
+
+@keyframes sqR {
+    0%{
+        font-weight: 900;
+    }
+
+    50%{
+        font-weight: 200;
+    }
+
+    100%{
+        font-weight: 900;
+    }
+}
+
+#searchBox{
+    color: aqua !important;
+    background-color: #001f25 !important;
+}
+
+#searchBox::placeholder {
+    color: #1f6063 !important;
+}
+
+img{
+    width: max(2.5vw, 2.5vh);
+    filter: contrast(1.5) saturate(1.5);
+}
+
+@keyframes hue {
+    0%{
+        filter: hue-rotate(0deg);
+    }
+
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+img:hover{
+    animation: hue 1.5s linear infinite;
+}

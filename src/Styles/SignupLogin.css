@@ -1,0 +1,24 @@
+.bg{
+  background-image: url('../m3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.box {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 0;
+}
+
+.box::before {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  height: 100%;
+  width: 100%; 
+  content: '';
+  background-color: rgba(0, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  border-radius: 7.1%;
+  z-index: -1;
+}
