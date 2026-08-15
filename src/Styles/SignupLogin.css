@@ -1,6 +1,7 @@
 .bg{
-  background-image: url('../m3.jpg');
+  background-image: url('../m1.jpg');
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
 
@@ -21,4 +22,26 @@
   backdrop-filter: blur(8px);
   border-radius: 7.1%;
   z-index: -1;
+}
+
+.login-box-responsive {
+    width: 90%;
+}
+
+@media (min-width: 768px) {
+    .login-box-responsive {
+        width: 60%;
+    }
+}
+
+@media (min-width: 992px) {
+    .login-box-responsive {
+        width: 75%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .login-box-responsive {
+        width: 65%;
+    }
 }

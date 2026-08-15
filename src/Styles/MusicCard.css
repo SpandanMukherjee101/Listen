@@ -1,0 +1,131 @@
+.music-card {
+    background: rgba(0, 31, 37, 0.65);
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    border-radius: 16px;
+    padding: 1.5rem;
+    color: #fff;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s, border-color 0.3s;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.music-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.08) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+}
+
+.music-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 255, 255, 0.15);
+    border-color: rgba(0, 255, 255, 0.6);
+}
+
+.music-card:hover::before {
+    opacity: 1;
+}
+
+.music-card-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #00ffff;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.author-link {
+    color: #50fd00;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.2s, text-shadow 0.2s;
+}
+
+.author-link:hover {
+    color: #fff;
+    text-shadow: 0 0 8px #50fd00;
+}
+
+.genre-pill {
+    font-size: 0.75rem;
+    background: rgba(255, 179, 0, 0.15);
+    color: #ffb300;
+    border: 1px solid rgba(255, 179, 0, 0.35);
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+.card-action-btn {
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    color: #00ffff;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.card-action-btn:hover {
+    background: #00ffff;
+    color: #000;
+    transform: scale(1.05);
+}
+
+.card-action-btn.active-play {
+    background: #50fd00;
+    color: #000;
+    border-color: #50fd00;
+    box-shadow: 0 0 15px rgba(80, 253, 0, 0.4);
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: #a0e8ef;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: transform 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.icon-btn:hover {
+    transform: scale(1.15);
+    color: #00ffff;
+}
+
+.delete-track-btn {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+    opacity: 0.7;
+}
+
+.delete-track-btn:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}

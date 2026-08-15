@@ -1,0 +1,125 @@
+.user-profile-modal-content {
+    background: linear-gradient(135deg, rgba(0, 35, 45, 0.98) 0%, rgba(0, 15, 20, 0.99) 100%);
+    border: 1px solid rgba(80, 253, 0, 0.4);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 650px;
+    padding: 2rem;
+    color: #fff;
+    box-shadow: 0 20px 50px rgba(80, 253, 0, 0.2);
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.profile-avatar-placeholder {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #00ffff, #50fd00);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.user-handle-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+}
+
+.user-name-subtitle {
+    color: #a0e8ef;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.profile-stats-bar {
+    display: flex;
+    gap: 2rem;
+    background: rgba(0, 255, 255, 0.08);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.stat-item {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.stat-item:hover {
+    transform: scale(1.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #00ffff;
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #e0f8ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.follow-action-btn {
+    background: linear-gradient(45deg, #50fd00, #00ffff);
+    border: none;
+    color: #000;
+    font-weight: 800;
+    padding: 10px 28px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 1rem;
+}
+
+.follow-action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(80, 253, 0, 0.5);
+}
+
+.follow-action-btn.is-following {
+    background: rgba(255, 77, 77, 0.2);
+    border: 1px solid #ff4d4d;
+    color: #ff4d4d;
+}
+
+.follow-action-btn.is-following:hover {
+    background: #ff4d4d;
+    color: #fff;
+    box-shadow: 0 5px 20px rgba(255, 77, 77, 0.4);
+}
+
+.user-list-modal {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-top: 1rem;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.user-list-item {
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #50fd00;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.user-list-item:hover {
+    background: rgba(0, 255, 255, 0.1);
+    color: #fff;
+}

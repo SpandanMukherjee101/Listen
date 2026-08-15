@@ -1,0 +1,129 @@
+.feed-container {
+    padding: 2rem max(5vw, 2rem);
+    min-height: calc(100vh - 160px);
+    background: radial-gradient(circle at 50% 0%, #002b33 0%, #000 70%);
+    color: #fff;
+}
+
+.genre-filter-bar {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    scrollbar-width: thin;
+    scrollbar-color: #00ffff rgba(0, 0, 0, 0.3);
+}
+
+.genre-filter-bar::-webkit-scrollbar {
+    height: 6px;
+}
+
+.genre-filter-bar::-webkit-scrollbar-thumb {
+    background: #00ffff;
+    border-radius: 3px;
+}
+
+.genre-tab-btn {
+    background: rgba(1, 54, 66, 0.6);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    margin-top: 1.5rem;
+    color: #a0e8ef;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    text-transform: capitalize;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.genre-tab-btn:hover {
+    background: rgba(0, 255, 255, 0.2);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.genre-tab-btn.active {
+    background: #00ffff;
+    color: #000;
+    border-color: #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.feed-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.feed-title {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #fff, #00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.upload-fab-btn {
+    background: linear-gradient(45deg, #00ffff, #50fd00);
+    border: none;
+    color: #000;
+    font-weight: 800;
+    padding: 10px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.upload-fab-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(80, 253, 0, 0.6);
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.page-btn {
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid #00ffff;
+    color: #00ffff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.page-btn:hover:not(:disabled) {
+    background: #00ffff;
+    color: #000;
+}
+
+.page-btn:disabled {
+    border-color: #2a585f;
+    color: #2a585f;
+    cursor: not-allowed;
+}
+
+.empty-feed-state {
+    text-align: center;
+    padding: 5rem 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    border: 1px dashed rgba(0, 255, 255, 0.3);
+}
