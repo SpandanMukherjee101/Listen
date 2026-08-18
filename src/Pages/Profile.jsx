@@ -178,7 +178,7 @@ export const Profile = () => {
                         )}
 
                         {activeTab === 'likes' && (
-                            <div>
+                            <div className="mb-5 pb-5">
                                 <h4 className="text-info mb-3">My Liked Tracks</h4>
                                 {Array.isArray(profData.likes) && profData.likes.length > 0 ? (
                                     <div className="d-flex flex-wrap gap-3">

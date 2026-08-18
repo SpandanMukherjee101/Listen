@@ -27,7 +27,7 @@ export const MusicPlayerProvider = ({ children }) => {
             const res = await axios.get('/auth/prof');
             setCurrentUser(res.data);
             if (res.data?.likes && Array.isArray(res.data.likes)) {
-                setUserLikedTracks(new Set(res.data.likes));
+                setUserLikedTracks(new Set(res.data.likes.map(track => typeof track === 'object' ? track._id : track)));
             }
         } catch (err) {
             console.error('Failed to fetch user profile in context:', err);
@@ -44,7 +44,11 @@ export const MusicPlayerProvider = ({ children }) => {
         audio.volume = volume;
 
         const handleTimeUpdate = () => {
-            setCurrentTime(audio.currentTime || 0);
+            if (audio.ended || (audio.duration && Math.abs(audio.duration - audio.currentTime) < 0.1)) {
+                setCurrentTime(audio.duration || 0);
+            } else {
+                setCurrentTime(audio.currentTime || 0);
+            }
         };
 
         const handleDurationChange = () => {

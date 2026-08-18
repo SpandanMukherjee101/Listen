@@ -102,7 +102,7 @@ export const CommentsModal = ({ musicId, musicTitle, onClose, onUserClick }) => 
                 setComments((prev) =>
                     prev.map((c) =>
                         c._id === cid
-                            ? { ...c, likes: Array.isArray(c.likes) ? c.likes.filter((u) => u !== currentUser?.userid) : [] }
+                            ? { ...c, likes: Array.isArray(c.likes) ? c.likes.filter((u) => u !== currentUser?.userid && u !== currentUser?._id) : [] }
                             : c
                     )
                 );
@@ -116,7 +116,7 @@ export const CommentsModal = ({ musicId, musicTitle, onClose, onUserClick }) => 
                 setComments((prev) =>
                     prev.map((c) =>
                         c._id === cid
-                            ? { ...c, likes: Array.isArray(c.likes) ? [...c.likes, currentUser?.userid] : [currentUser?.userid] }
+                            ? { ...c, likes: Array.isArray(c.likes) ? [...c.likes, currentUser?._id] : [currentUser?._id] }
                             : c
                     )
                 );
@@ -155,7 +155,7 @@ export const CommentsModal = ({ musicId, musicTitle, onClose, onUserClick }) => 
                         comments.map((c) => {
                             const isOwner = currentUser && (currentUser.userid === c.user || currentUser._id === c.user);
                             const likesCount = Array.isArray(c.likes) ? c.likes.length : typeof c.likes === 'number' ? c.likes : 0;
-                            const isLiked = likedComments.has(c._id) || (Array.isArray(c.likes) && c.likes.includes(currentUser?.userid));
+                            const isLiked = likedComments.has(c._id) || (Array.isArray(c.likes) && (c.likes.includes(currentUser?._id) || c.likes.includes(currentUser?.userid)));
 
                             return (
                                 <div key={c._id} className="comment-item-card">
