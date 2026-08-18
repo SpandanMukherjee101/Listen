@@ -52,6 +52,7 @@ export const MusicPlayerProvider = ({ children }) => {
         };
 
         const handleEnded = () => {
+            setCurrentTime(audio.duration || 0);
             setIsPlaying(false);
             // Automatically play next track if available
             if (queueIndex < queue.length - 1) {

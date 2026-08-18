@@ -124,3 +124,42 @@
 .like-btn:hover {
     transform: scale(1.2);
 }
+
+.player-left {
+    width: 25%;
+}
+
+.player-center {
+    width: 50%;
+}
+
+.player-right {
+    width: 25%;
+}
+
+@media (max-width: 768px) {
+    .player-bar {
+        padding: 0 1rem;
+    }
+    
+    .player-left {
+        width: 35%;
+    }
+    
+    .player-center {
+        width: 65%;
+    }
+    
+    .player-right {
+        display: none !important;
+    }
+    
+    .track-info-title {
+        font-size: 0.9rem;
+        max-width: 120px;
+    }
+    
+    .time-display {
+        display: none;
+    }
+}

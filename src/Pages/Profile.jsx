@@ -6,7 +6,7 @@ import { MusicPlayerContext } from '../Context/MusicPlayerContext.jsx';
 import '../Styles/Profile.css';
 
 export const Profile = () => {
-    const { refreshProfile } = useContext(MusicPlayerContext);
+    const { refreshProfile, playTrack, addToQueue } = useContext(MusicPlayerContext);
     const [profData, setProfData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [activeTab, setActiveTab] = useState('uploads'); // 'uploads' | 'likes' | 'settings'
@@ -142,20 +142,28 @@ export const Profile = () => {
                         {/* Tab Content */}
                         {activeTab === 'uploads' && (
                             <div>
-                                <h4 className="text-info mb-3">My Uploaded Music IDs</h4>
+                                <h4 className="text-info mb-3">My Uploaded Tracks</h4>
                                 {Array.isArray(profData.musics) && profData.musics.length > 0 ? (
                                     <div className="d-flex flex-wrap gap-3">
-                                        {profData.musics.map((mId, idx) => (
+                                        {profData.musics.map((track, idx) => (
                                             <div
                                                 key={idx}
-                                                className="p-3 bg-dark border border-info border-opacity-50 rounded-3 d-flex align-items-center justify-content-between"
+                                                className="p-3 bg-dark border border-info border-opacity-50 rounded-3 d-flex flex-column justify-content-between"
                                                 style={{ minWidth: '250px' }}
                                             >
-                                                <div>
-                                                    <span className="badge bg-info text-dark mb-1">Track #{idx + 1}</span>
-                                                    <h6 className="mb-0 text-light font-monospace" style={{ fontSize: '0.85rem' }}>
-                                                        ID: {mId}
+                                                <div className="mb-3">
+                                                    <span className="badge bg-info text-dark mb-2">Track #{idx + 1}</span>
+                                                    <h6 className="mb-0 text-light font-monospace" style={{ fontSize: '0.95rem' }}>
+                                                        {track.info || 'Unknown Track'}
                                                     </h6>
+                                                </div>
+                                                <div className="d-flex gap-2">
+                                                    <button className="btn btn-sm btn-outline-info flex-grow-1" onClick={() => playTrack(track, profData.musics)}>
+                                                        ▶ Play
+                                                    </button>
+                                                    <button className="btn btn-sm btn-outline-secondary" onClick={() => addToQueue(track)} title="Add to Queue">
+                                                        ➕
+                                                    </button>
                                                 </div>
                                             </div>
                                         ))}
@@ -171,20 +179,28 @@ export const Profile = () => {
 
                         {activeTab === 'likes' && (
                             <div>
-                                <h4 className="text-info mb-3">My Liked Track IDs</h4>
+                                <h4 className="text-info mb-3">My Liked Tracks</h4>
                                 {Array.isArray(profData.likes) && profData.likes.length > 0 ? (
                                     <div className="d-flex flex-wrap gap-3">
-                                        {profData.likes.map((mId, idx) => (
+                                        {profData.likes.map((track, idx) => (
                                             <div
                                                 key={idx}
-                                                className="p-3 bg-dark border border-danger border-opacity-50 rounded-3 d-flex align-items-center justify-content-between"
+                                                className="p-3 bg-dark border border-danger border-opacity-50 rounded-3 d-flex flex-column justify-content-between"
                                                 style={{ minWidth: '250px' }}
                                             >
-                                                <div>
-                                                    <span className="badge bg-danger text-light mb-1">❤️ Liked</span>
-                                                    <h6 className="mb-0 text-light font-monospace" style={{ fontSize: '0.85rem' }}>
-                                                        ID: {mId}
+                                                <div className="mb-3">
+                                                    <span className="badge bg-danger text-light mb-2">❤️ Liked</span>
+                                                    <h6 className="mb-0 text-light font-monospace" style={{ fontSize: '0.95rem' }}>
+                                                        {track.info || 'Unknown Track'}
                                                     </h6>
+                                                </div>
+                                                <div className="d-flex gap-2">
+                                                    <button className="btn btn-sm btn-outline-danger flex-grow-1" onClick={() => playTrack(track, profData.likes)}>
+                                                        ▶ Play
+                                                    </button>
+                                                    <button className="btn btn-sm btn-outline-secondary" onClick={() => addToQueue(track)} title="Add to Queue">
+                                                        ➕
+                                                    </button>
                                                 </div>
                                             </div>
                                         ))}

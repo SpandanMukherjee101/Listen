@@ -32,7 +32,7 @@ export const MusicPlayerBar = () => {
     return (
         <div className="player-bar d-flex align-items-center justify-content-between">
             {/* Track info & Like */}
-            <div className="d-flex align-items-center" style={{ width: '25%' }}>
+            <div className="player-left d-flex align-items-center">
                 <div className="me-3">
                     <h6 className="track-info-title">{currentTrack.info || 'Unknown Track'}</h6>
                     <div className="d-flex align-items-center mt-1">
@@ -57,7 +57,7 @@ export const MusicPlayerBar = () => {
             </div>
 
             {/* Controls & Seek Bar */}
-            <div className="d-flex flex-column align-items-center justify-content-center" style={{ width: '50%' }}>
+            <div className="player-center d-flex flex-column align-items-center justify-content-center">
                 <div className="d-flex align-items-center mb-1">
                     <button className="player-btn" onClick={prevTrack} title="Previous">
                         ⏮
@@ -84,7 +84,7 @@ export const MusicPlayerBar = () => {
             </div>
 
             {/* Volume */}
-            <div className="d-flex align-items-center justify-content-end" style={{ width: '25%' }}>
+            <div className="player-right d-flex align-items-center justify-content-end">
                 <span className="me-2" style={{ fontSize: '1.2rem' }}>
                     {volume === 0 ? '🔇' : volume < 0.5 ? '🔉' : '🔊'}
                 </span>
